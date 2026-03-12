@@ -7,7 +7,7 @@ document.getElementById("getWeather").addEventListener("click", function() {
     console.log("City entered:", city);
 
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=27c03d243226010189df240e219e42de
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=YOUR API KEY
     `)
 
 
