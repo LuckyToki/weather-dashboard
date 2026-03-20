@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Utility</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-grid" aria-hidden="true"></div>
+  <main class="app-shell">
+    <section class="app">
+      <div class="panel panel-intro">
+        <p class="eyebrow">FIELD WEATHER CONSOLE</p>
+        <div class="title-row">
+          <div>
+            <h1>Weather Utility</h1>
+          </div>
+          <div class="status-pill">Live conditions</div>
+        </div>
+
+        <div class="search">
+          <label class="sr-only" for="cityInput">Enter city</label>
+          <div class="search-stack">
+            <input id="cityInput" placeholder="Enter city (e.g. Charleston, SC)" autocomplete="off" aria-describedby="searchHint">
+            <div class="suggestions panel" id="suggestions" hidden></div>
+          </div>
+          <button id="getWeather">Get Weather</button>
+        </div>
+        <div class="search-actions">
+          <button id="useLocation" class="secondary-button" type="button">📍 Use My Location</button>
+          <p class="search-hint" id="searchHint">Use `City, State, Country` for the most accurate match.</p>
+        </div>
+        <p class="feedback-message" id="feedbackMessage" aria-live="polite"></p>
+      </div>
+
+      <section class="dashboard">
+        <article class="panel card weather-card">
+          <div class="card-header">
+            <p class="section-label">Current Conditions</p>
+            <p class="section-meta" id="statusText">Awaiting location input</p>
+          </div>
+
+          <div class="weather-main">
+            <div class="weather-copy">
+              <h2 id="cityName">Tokyo, JP</h2>
+              <div class="temperature-row">
+                <span class="weather-icon" id="weatherIcon" aria-hidden="true">◐</span>
+                <p id="temperature">68°F</p>
+              </div>
+              <p id="condition" class="tooltip-host" data-tooltip="Primary observed condition from the weather feed.">Clear</p>
+              <p class="resolved-location" id="resolvedLocation">Resolved location: Tokyo, JP</p>
+            </div>
+            <div class="metric-panel">
+              <p class="metric-label">Analysis</p>
+              <p class="metric-value" id="weatherMood">Balanced visibility and mild temperature range.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel card recommendation-card">
+          <div class="card-header">
+            <h3>Recommended Items</h3>
+            <p class="section-meta">Context-aware essentials</p>
+          </div>
+          <ul id="styleAdvice">
+            <li>Light jacket</li>
+            <li>Long sleeve shirt</li>
+          </ul>
+        </article>
+      </section>
+    </section>
+  </main>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
